@@ -1,0 +1,5 @@
+My Company
+list of Offers
+Candidate_name,candidate email, Job_title,dept_name,Start Date,Manager_name,response_date,manager_phone,HR person
+John Doe, john@john.com, Systems Programmer, IT, 2022-10-10, Mr. Blah Boy, 2022-10-05, 4040403333, Ms. HR Lady 
+Jane Doe, jane@jane.com, Business Analyst, IT, 2022-10-08, Ms. Blah Lady, 2022-10-03, 4040402222, Ms. HR Lady 
