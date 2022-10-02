@@ -4,7 +4,7 @@
 Tests the method Check email
 """
 import unittest
-
+import sys
 from utils import check_phone
 
 
@@ -17,21 +17,34 @@ class TestValidate(unittest.TestCase):
     
     def test_valid_phone(self):
         """
-        Tests the method Check email
+        Tests the method Check phone with no dashes or brackets
         """
         self.assertTrue(check_phone("1234567890"))
     
     def test_valid_phone_with_dashes(self):
         """
-        Tests the method Check email
+        Tests the method Check phone with dashes
         """
         self.assertTrue(check_phone("123-456-7890"))
         
     def test_valid_phone_with_brackets(self):
         """
-        Tests the method Check email
+        Tests the method Check phone with brackets and dashes
         """
         self.assertTrue(check_phone("(123)456-7890"))
+        
+    def test_valid_phone_with_plus(self):
+        """
+        Tests the method Check phone with plus sign
+        """
+        self.assertTrue(check_phone("+1234567890"))
+    
+    def test_invalid_phone_Length(self):
+        """
+        Tests the method Check phone with invalid phone number length
+        """
+        self.assertFalse(check_phone("123456789"))
+    
         
     
 if __name__ == '__main__':

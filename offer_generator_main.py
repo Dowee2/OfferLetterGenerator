@@ -24,7 +24,6 @@ def read_from_disk(filename):
                 generate = offer_letter_generator.OfferGenerator()
                 content = input_file.read()
                 input_file.seek(0,0)
-                print(content)
                 if content.__contains__("Candidate List"):
                     generate.parse_candidates_from_file(input_file2.read(),input_file.readlines())
                 else:
@@ -38,7 +37,20 @@ def main(filenames):
     """
     Main entry point.
     """
-    read_from_disk(filenames)
+    if(len(filenames) == 3):
+        print(filenames)
+        read_from_disk(filenames)
+    elif(len(filenames) == 1):
+        template = input("Please provide the location to the offer letter template: ")
+        filenames.insert(1,template)
+        candidate_list = input("Please provide the location to the candidate list: ")
+        filenames.insert(2,candidate_list)
+        print(filenames)
+        read_from_disk(filenames)
+    else:
+        input("Please rerun this program with the correct number of arguments i.e offer_generator_main.py <template> <candidate_list>")
+        return
+    
     
 
 if __name__ == '__main__':
